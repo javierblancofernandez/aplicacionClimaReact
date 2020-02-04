@@ -1,16 +1,26 @@
-import React from 'react';
-import WeatherLocation from './components/WeatherLocation';
+import React ,{Component} from 'react';
+import LocationList from './components/LocationList';
 import './App.css';
 
+const cities =[
+    'Buenos Aires,ar',
+    'New York,us',
+    'Madrid,es',
+    'Lima,pe'
+]
 
 
-function App() {
-  return (
-    <div className="App">
-      Weather APP (aplicacion de clima)
-      <WeatherLocation></WeatherLocation>
-    </div>
-  );
+class App extends Component {
+ 
+  render() {
+    return (
+      <div className="App">
+        Weather APP (aplicacion de clima)
+        <LocationList cities={cities}/>
+      </div>
+    );
+  }
+  
 }
 
 export default App;
