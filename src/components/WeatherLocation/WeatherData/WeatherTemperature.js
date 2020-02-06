@@ -13,15 +13,15 @@ const icons = {
     [RAIN]:"rain",
     [SNOW] :"snow",
     [WINDY] :"windy",
-    [THUNDER]:"day-thunderstore",
+    [THUNDER]:"day-thunderstorm",
     [DRIZZLE]:"day-showers"
 };
 const getWeatherIcon = weatherState =>{
-    console.log(icons['cloud']); 
+    //console.log(icons['cloud']); 
     const icon = icons[weatherState];
     const size = "4x";
     
-    console.log(icon);
+    //console.log(icon);
     
     if (icon) {
         return <WeatherIcons className="wicon" name={icon} size={size}></WeatherIcons>;

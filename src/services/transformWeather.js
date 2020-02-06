@@ -6,7 +6,7 @@ const getTemp = kelvin => {
     convert(kelvin)
       .from("K")
       .to("C")
-      .toFixed(2)
+      .toFixed(0)
   );
 };
 const getWeatherState = weather => {
@@ -27,7 +27,7 @@ const getWeatherState = weather => {
   
 };
 const transformWeather = weather_data => {
-  console.log("er tiempo jaaalll",weather_data);
+  //console.log("er tiempo jaaalll",weather_data);
   
   const { humidity, temp } = weather_data.main;
   const { speed } = weather_data.wind;
