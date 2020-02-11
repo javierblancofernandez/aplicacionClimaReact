@@ -1,5 +1,5 @@
 import React from "react";
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 import WeatherLocation from "./WeatherLocation";
 import './styles.css';
 //import WeatherData from "./WeatherLocation/WeatherData";
