@@ -76,6 +76,8 @@ class ForecastExtended extends Component {
 
     render (){
         const city = this.props.city;
+        console.log("esta ciudad es de Forecast :",city);
+        
         const {forecastData}=this.state;
         return(
         <div>

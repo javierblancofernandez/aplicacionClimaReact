@@ -7,28 +7,18 @@ import Typography from "@material-ui/core/Typography";
 import Toolbar from "@material-ui/core/Toolbar";
 import { Grid, Col, Row } from "react-flexbox-grid";
 import LocationListContainer from "./containers/LocationListContainer";
-import ForecastExtended from "./components/ForecastExtended";
+import ForeCastExtendedContainer from "./containers/ForeCastExtendedContainer";
+//import ForeCastExtended from './components/ForecastExtended';
 //import {setCity} from './actions';
 
 import "./App.css";
 
-
-
-
 const cities = ["Buenos Aires,ar", "New York,us", "Madrid,es", "Lima,pe"];
 
-
 class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      city: null
-    };
-  }
-
- 
+  
   render() {
-    const { city } = this.state;
+    
     return (
       <Grid>
         <Row>
@@ -42,19 +32,15 @@ class App extends Component {
         </Row>
         <Row>
           <Col xs={12} md={6}>
-            <LocationListContainer
-              cities={cities}
-              
-            />
+            <LocationListContainer cities={cities} />
           </Col>
           <Col xs={12} md={6}>
             <Paper>
               <div className="details">
-                {city ? (
-                  <ForecastExtended city={city}></ForecastExtended>
-                ) : null
-                // city && <ForecastExtended city={city}></ForecastExtended>
-                }
+    
+                  
+                  <ForeCastExtendedContainer ></ForeCastExtendedContainer>
+                
               </div>
             </Paper>
           </Col>
@@ -64,10 +50,6 @@ class App extends Component {
   }
 }
 
-
-
-
- 
- export default App;
+export default App;
 
 //export default AppConnected;
