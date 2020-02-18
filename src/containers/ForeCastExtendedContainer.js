@@ -1,6 +1,7 @@
 import React , { Component } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
+import {getForecastDataFromCities, getCity} from './../reducers';
 import ForecastExtended from "./../components/ForecastExtended";
 
 
@@ -18,8 +19,9 @@ class ForeCastExtendedContainer extends Component {
 }
 ForeCastExtendedContainer.prototypes = {
     city:PropTypes.string.isRequired,
-    forecastData:PropTypes.array.isRequired,
+    forecastData:PropTypes.array,
 };
-const mapStateToProps = ({city,cities}) =>({city,forecastData:cities[city]&&cities[city].forecastData});
+//{city,cities} es el destructuring del state
+const mapStateToProps = state =>({city:getCity(state),forecastData:getForecastDataFromCities(state)});
 
 export default connect(mapStateToProps,null)(ForeCastExtendedContainer);

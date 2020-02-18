@@ -12,3 +12,6 @@ export const cities = (state={},action)=>{
             return state;
     }
 };
+// selectores se ponen en los reducers que es donde se conocen como esta el estado
+export const getForecastDataFromCities = (state , city)=>state[city]&&state[city].forecastData;
+//luego utilizo el selector desde el container en esta caso ForeCastExtendedContainer
