@@ -8,16 +8,18 @@ class ForeCastExtendedContainer extends Component {
   
   
   render() {
-    console.log("la ciudad enForeCastExtendedContainer es :",this.props.city);
+    const {city,forecastData}=this.props;
+    console.log("la ciudad enForeCastExtendedContainer es :",city);
     return (
       
-      <ForecastExtended city={this.props.city}></ForecastExtended>
+      <ForecastExtended city={city} forecastData={forecastData}></ForecastExtended>
     );
   }
 }
 ForeCastExtendedContainer.prototypes = {
     city:PropTypes.string.isRequired,
+    forecastData:PropTypes.array.isRequired,
 };
-const mapStateToProps = state =>({city:state.city});
+const mapStateToProps = ({city,cities}) =>({city,forecastData:cities[city]&&cities[city].forecastData});
 
 export default connect(mapStateToProps,null)(ForeCastExtendedContainer);
