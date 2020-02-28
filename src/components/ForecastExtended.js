@@ -6,9 +6,8 @@ import ForecasItem from './ForecastItem';
 import './styles.css';
 
 const renderForecastItemsDays=(forecastData)=>{
-        
-        
-        
+    console.log("ESte es FORECASTADATA",forecastData);
+    
     return forecastData.map(forecast =>(
     <ForecasItem 
         key={`${forecast.weekDay}${forecast.hour}`}
@@ -29,7 +28,8 @@ const ForecastExtended=({city,forecastData})=> (
             <h2 className="forecast-title">
             Pronostico extendido para :{city}
             </h2>
-            {forecastData ? renderForecastItemsDays(forecastData):
+            {forecastData ? 
+            renderForecastItemsDays(forecastData):
             renderProgress()}
         </div>
     
@@ -37,16 +37,9 @@ const ForecastExtended=({city,forecastData})=> (
 
 );
 
-
-
-
-   
-
-
-
 ForecastExtended.propTypes ={
     city:PropTypes.string.isRequired,
-    forecastData:PropTypes.array.isRequired,
+    forecastData:PropTypes.array,
 }
 
 export default ForecastExtended;

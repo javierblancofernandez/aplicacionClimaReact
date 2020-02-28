@@ -1,7 +1,7 @@
 import React , { Component } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import {getForecastDataFromCities, getCity} from './../reducers';
+import {getForecastDataFromCities, getCity} from "./../reducers";
 import ForecastExtended from "./../components/ForecastExtended";
 
 
@@ -11,6 +11,7 @@ class ForeCastExtendedContainer extends Component {
   render() {
     const {city,forecastData}=this.props;
     console.log("la ciudad enForeCastExtendedContainer es :",city);
+    console.log("el forecastaDAta enForeCastExtendedContainer es :",forecastData);
     return (
       
       <ForecastExtended city={city} forecastData={forecastData}></ForecastExtended>
